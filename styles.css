@@ -15,6 +15,21 @@ body{
     color: black;
 }
 
+nav{
+    height: 4.5rem;
+    width: 100vw;
+    background-color: #131418;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+
+form{
+    overflow-y: visible;
+    height: auto;
+}
+
 .content-container{
     display: flex;
     justify-content: center;
@@ -23,14 +38,14 @@ body{
     height: 100vh;
     margin: 0 auto;
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(33, 33, 33, 0.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding-top: 4.5rem;
     overflow-y: auto;
 }
 
 .content{
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(33, 33, 33, 0.9);
     padding: 20px;
     width: 100%;
     max-width: 1000px;
@@ -38,16 +53,6 @@ body{
     text-align: center;
     color: #333;
     border-radius: 6px;
-}
-
-.content h1{
-    color: #222;
-    margin-bottom: 20px;
-}
-
-.content p{
-    color: #444;
-    line-height: 1.6;
 }
 
 .social-hub{
@@ -114,15 +119,36 @@ body{
     display: flex;
 }
 
+.artist-form{
+    margin-top: 20px;
+    color: #333;
+}
 
-nav{
-    height: 4.5rem;
-    width: 100vw;
-    background-color: #131418;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
-    display: flex;
-    position: fixed;
-    z-index: 10;
+.artist-form input, .artist-form textarea {
+    width: 100%;
+    background-color: 333;
+    border: 1px color(srgb 33 33 33);
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    color: #333;
+}
+
+.artist-form button {
+    padding: 10px 20px;
+    background-color: #ffeba7;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.artist-form button:hover {
+    background-color: #ffeba7;
+}
+
+.artist-form p{
+    color: white;
 }
 
 .container{

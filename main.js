@@ -18,3 +18,27 @@ mainButton.addEventListener("click", () => {
     const isVisible = socialButtons.style.display === "flex";
     socialButtons.style.display = isVisible ? "none" : "flex";
 });
+
+function showForm(formID) {
+    const forms = document.querySelectorAll('.artist-form');
+    forms.forEach(form => {
+        form.style.display = 'none';
+    });
+
+    const selectedForm = document.getElementById(formID);
+    if (selectedForm) {
+        selectedForm.style.display = 'block';
+    }
+}
+
+function showMotiv(motivID) {
+    const motiv = document.querySelectorAll('.motiv');
+    motiv.forEach(form => {
+        form.style.display = 'none';
+    });
+
+    const selectedMotiv = document.getElementById(motivID);
+    if (selectedMotiv) {
+        selectedMotiv.style.display = 'block';
+    }
+}

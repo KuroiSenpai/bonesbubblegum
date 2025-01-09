@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="styles.css">
         <title>Bones & Bubblegum</title>
     </head>
@@ -27,15 +29,120 @@
         </nav>
         <div class="content-container">
             <div class="content">
-                <form action="post">
-                    <img src="">
-                    <input type="radio" id="artists" name="artists" value="Mol">
-                    <img src="">
-                    <input type="radio" id="artists" name="artists" value="Kelvin">
-                    <img src="">
-                    <input type="radio" id="artists" name="artists" value="Beki">
-                    <img src="">
-                    <input type="radio" id="artists" name="artists" value="Maileen">
+                <form action="/submit-form" method="post">
+                    <div>
+                        <input type="radio" id="artists" name="artists" value="Mol" onclick="showForm('mol-form')">
+                        <label for="artists">Mol</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="artists" name="artists" value="Kelvin" onclick="showForm('kelvin-form')">
+                        <label for="artists">Kelvin</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="artists" name="artists" value="Beki" onclick="showForm('beki-form')">
+                        <label for="artists">Beki</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="artists" name="artists" value="Maileen" onclick="showForm('maileen-form')">
+                        <label for="artists">Maileen</label>
+                    </div>
+
+                    <div id="mol-form" class="artist-form" style="display: none;">
+                        <h3>Anfrage an den Artist Mol</h3>
+                        <p>Hello Hello Hello! Schön, dass du Interesse an einem Tattoo von mir hast</p><br>
+                        <p>Dieses Formular hilft uns beiden, deine Idee bestmöglich umzusetzen und einen gemeinsamen Termin finden zu können</p><br>
+                        <p>Ich melde mich innerhalb einer Woche bei dir zurück, bitte habe so lange Geduld</p><br>
+                        <p>Ganz unten findest du noch ein paar Informationen, die du dir bitte durchlesen sollst.</p><br>
+                        <div>
+                            <label for="name">Bitte Trage den Namen ein, mit dem du angesprochen werden möchtest.</label>
+                            <input type="text" class="form-style" id="name" placeholder="Name">
+                            <input type="text" class="form-style" id="vorname" placeholder="Vorname">
+                        </div>
+                        <div>
+                            <input type="text" class="form-style" id="pronomen" placeholder="Pronomen">
+                            <label for="pronomen">Pronomen</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-style" id="email" placeholder="example@abc.de">
+                            <label for="email">Email</label>
+                        </div>
+                        <div>
+                            <label for="nummer">Telefon-/ Handynummer</label>
+                            <input type="text" class="form-style" id="left-half" placeholder="01237/123456"><br>
+                        </div>
+                        <div>
+                            <h4>Motivwahl</h4>
+                            <input type="radio" id="motiv" name="motiv" value="wannado" onclick="showMotiv('wannado-form')">
+                            <label for="motiv">Wannado</label>
+                            <input type="radio" id="motiv" name="motiv" value="wunsch" onclick="showMotiv('wunsch-form')">
+                            <label for="motiv">Wunsch-Motiv</label>
+                        </div>
+                        <div id="wannado-form" class="motiv" style="display: none;">
+                            <div>
+                                <input type="textarea" class="form-style" placeholder="Bitte schreibe hier, wie dein Wunsch-Motiv aussehen soll. Welche Elemente sind dir wichtig?">
+                            <label for="motiv" id="unterschrift-textarea">Je präziser du deinen Wunsch formulierst, desto leichter ist die anschließende Umsetzung für mich.</label>
+                            </div>
+                            <div>
+                                <label for="upload">Hier kannst du Referenzbilder hochladen, wenn du magst. Falls sich an der Körperstelle schon Tattoos befinden, freue ich mich auch über ein Foto, dann kann ich das Tattoo besser anpassen.</label>
+                                <div>
+                                    <label for="referenzbilder">Bilder als Referenz</label>
+                                    <input type="file" id="referenzbilder" name="referenzbilder" accept="image/png, image/jpeg" multiple="true">
+                                </div>
+                                <div>
+                                    <label for="koerperstelle">Bilder der Körperstelle</label>
+                                    <input type="file" id="koerperstelle" name="koerperstelle" accept="image/png, image/jpeg" multiple="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="wunsch-form" class="motiv" style="display: none;">
+                            <label for="upload">Falls du schon ein fertiges Motiv hast, kannst du dies hier hochladen.</label>
+                            <input type="file" id="wunschmotiv" name="wunschmotiv" accept="image/png, image/jpeg" multiple="true">
+                            <label for="koerperstelle">Falls sich an der Körperstelle schon Tattoos befinden, freue ich mich auch über ein Foto, damit ich mir einen Überblick beschaffen kann.</label>
+                            <input type="file" id="koerperstelle" name="koerperstelle" accept="image/png, image/jpeg" multiple="true">
+                        </div>
+                        <div>
+                            <label for="groesse">Welche Größe soll das Tattoo haben?</label>
+                            <input type="text" class="form-style" id="groesse" placeholder="in Centimeter">
+                        </div>
+                        <div>
+                            <label for="budget">Wie hoch ist dein Budget?</label>
+                            <input type="text" class="form-style" id="budget" placeholder="in Euro €">
+                        </div>
+                        <div>
+                            <label for="zeitraum">In welchem Zeitraum/ an welchen Tagen hast du Zeit?</label>
+                            <input type="date" id="datevon" name="date" placeholder="Von">
+                            <input type="date" id="datebis" name="date" placeholder="Bis">
+                        </div>
+                        <div>
+                            <label for="sonstiges">Sonstiges</label>
+                            <input type="textarea" class="form-style" placeholder="Falls du noch etwas hinzufügen möchtest oder eventuelle weitere Fragen hast.">
+                        </div>
+                        <div>
+                            <h3>Die Terminvergabe:</h3>
+                            <p>Das Formular hilft mir dabei, dass ich mir ein erstes Bild machen kann</p><br>
+                            <p>Sobald wir uns auf einem Termin geeinigt haben, benötige ich eine <b>Anzahlung von 50 €</b>, die innerhalb von 7 Tagen überwiesen werden muss. Ansonsten wird der reservierte Termin wieder frei und kann an eine andere Person vergeben werden. Die Anzahlung wird bei deinem Termin natürlich vom Gesamtpreis abgezogen.</p><br>
+                            <p>Kannst du aus welchen Gründen auch immer nicht zu deinem Termin erscheinen, gib mir bitte so schnell es geht Bescheid. Die Anzahlung erhälst du dann zurück, bzw. können wir diese dann für einen Ausweichtermin verwenden.</p><br>
+                            <p>Solltest du <b>nicht zu deinem Termin erscheinen</b> oder <b>sagst nicht spätestens 3 Tage vorm Termin ab</b>, wird die Anzahlung als Ausfallgebühr einbehalten</p><br>
+                            <p>Bei einem Wunsch-Motiv sende ich dir ein paar Tage vor deinem Termin die Skizze zu, damit wir noch Änderungen vornehmen können. Bitte beachte, dass ich im Studio nur Kleinigkeiten des Motivs anpassen kann.</p><br>
+                            <p>Beratungstermine sind normalerweise nicht nötig, aber möglich. Wenn du dich persönlich mit mir zusammensetzen willst, schreib das bitte unter "Sonstiges".</p><br>
+                            <h3>Wieviel kostet ein Tattoo?</h3>
+                            <p>Sobald ich alle Infos über Größe und Motiv habe, kann ich dir einen Preisrahmen nennen. Wenn du ein bestimmtes Budget hast, teile mir das bitte bei der Anfrage mit, damit ich dies beim Erstellen einer Skizze berücksichtigen kann.</p><br>
+                            <p>Momentan akzeptiere ich im Studio nur Barzahlung</p><br>
+                            <h3>Weiter Infos für deinen Termin</h3>
+                            <p>Bring bitte deinen Ausweis mit, ich tättowiere nur Personen, die über 18 Jahre alt sind.</p><br>
+                            <p>Wenn du <b>eine Person als Support</b> zu deinem Termin mitbringen willst, lass mich das bitte (unter "Sonstiges") vorher wissen, damit ich mich darauf einstellen kann.</p><br>
+                            <br>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox" name="checkbox" unchecked>
+                            <label for="checkbox">Ich habe alles sorgfältig gelesen und ausgefüllt. Mit der Anzahlung und Ausfallgebühr bin ich einverstanden.</label>
+                        </div>
+                        <div>
+                            <p>Vielen Dank für deine Anfrage! Ich werde dir so schnell es geht antworten.</p><br>
+                            <input type="submit" value="Submit">
+                        </div>
+
+                    </div>
                 </form>
             </div>
         </div>
