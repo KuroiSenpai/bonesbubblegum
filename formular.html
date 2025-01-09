@@ -52,8 +52,8 @@
                         <p>Ganz unten findest du noch ein paar Informationen, die du dir bitte durchlesen sollst.</p><br>
                         <div>
                             <label for="name">Bitte Trage den Namen ein, mit dem du angesprochen werden möchtest.</label>
-                            <input type="text" id="name" placeholder="Name">
-                            <input type="text" id="vorname" placeholder="Vorname">
+                            <input type="text" id="name" placeholder="Name" required>
+                            <input type="text" id="vorname" placeholder="Vorname" required>
                         </div>
                         <div>
                             <input type="text" id="pronomen" placeholder="Pronomen">
@@ -65,10 +65,15 @@
                         </div>
                         <div>
                             <label for="nummer">Telefon-/ Handynummer</label>
-                            <input type="text" id="left-half" placeholder="01237/123456"><br>
+                            <input type="text" id="left-half" placeholder="01237/123456" required><br>
                         </div>
                         <div>
-                            <h4>Motivwahl</h4>
+                            <label for="koerperstelletattoo">An welche Körperstelle soll das Motiv kommen?</label>
+                            <input type="text" id="koerperstelletattoo" name="koerperstelletattoo" placeholder="Körperstelle" required>
+                        </div>
+                        <hr>
+                        <div>
+                            <h4 style="margin-top: 4px;">Motivwahl</h4>
                             <input type="radio" id="motiv" name="motiv" value="wannado" onclick="showMotiv('wannado-form')">
                             <label for="motiv">Wannado</label>
                             <input type="radio" id="motiv" name="motiv" value="wunsch" onclick="showMotiv('wunsch-form')">
@@ -76,30 +81,55 @@
                         </div>
                         <div id="wannado-form" class="motiv" style="display: none;">
                             <div>
-                                <input type="textarea" placeholder="Bitte schreibe hier, wie dein Wunsch-Motiv aussehen soll. Welche Elemente sind dir wichtig?">
-                            <label for="motiv" id="unterschrift-textarea">Je präziser du deinen Wunsch formulierst, desto leichter ist die anschließende Umsetzung für mich.</label>
+                                <input type="textarea" placeholder="Bitte schreibe hier, wie dein Wunsch-Motiv aussehen soll. Welche Elemente sind dir wichtig?"><br>
+                                <label for="motiv" id="unterschrift-textarea">Je präziser du deinen Wunsch formulierst, desto leichter ist die anschließende Umsetzung für mich.</label>
                             </div>
                             <div>
                                 <label for="upload">Hier kannst du Referenzbilder hochladen, wenn du magst. Falls sich an der Körperstelle schon Tattoos befinden, freue ich mich auch über ein Foto, dann kann ich das Tattoo besser anpassen.</label>
+                                <hr>
                                 <div>
-                                    <label for="referenzbilder">Bilder als Referenz</label>
+                                    <label for="referenzbilder" style="margin-top: 6px;">Bilder als Referenz</label>
                                     <input type="file" id="referenzbilder" name="referenzbilder" accept="image/png, image/jpeg" multiple="true">
+                                    <div>
+                                        <p>Hochgeladene Dateien</p>
+                                        <pre class="outputRef">Dateien:</pre>
+                                    </div>
                                 </div>
+                                <hr>
                                 <div>
-                                    <label for="koerperstelle">Bilder der Körperstelle</label>
+                                    <label for="koerperstelle" style="margin-top: 6px;">Bilder der Körperstelle</label>
                                     <input type="file" id="koerperstelle" name="koerperstelle" accept="image/png, image/jpeg" multiple="true">
+                                    <div>
+                                        <p>Hochgeladene Dateien</p>
+                                        <pre class="outputKoerper">Dateien:</pre>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div id="wunsch-form" class="motiv" style="display: none;">
-                            <label for="upload">Falls du schon ein fertiges Motiv hast, kannst du dies hier hochladen.</label>
-                            <input type="file" id="wunschmotiv" name="wunschmotiv" accept="image/png, image/jpeg" multiple="true">
-                            <label for="koerperstelle">Falls sich an der Körperstelle schon Tattoos befinden, freue ich mich auch über ein Foto, damit ich mir einen Überblick beschaffen kann.</label>
-                            <input type="file" id="koerperstelle" name="koerperstelle" accept="image/png, image/jpeg" multiple="true">
+                            <hr>
+                            <div>
+                                <label for="upload" style="margin-top: 6px;">Falls du schon ein fertiges Motiv hast, kannst du dies hier hochladen.</label>
+                                <input type="file" id="wunschmotiv" name="wunschmotiv" accept="image/png, image/jpeg" multiple>
+                                <div>
+                                    <p>Hochgeladene Dateien</p>
+                                    <pre class="outputWunsch">Dateien:</pre>
+                                </div>
+                            </div>
+                            <hr>
+                            <div>
+                                <label for="koerperbilder" style="margin-top: 6px;">Falls sich an der Körperstelle schon Tattoos befinden, freue ich mich auch über ein Foto, damit ich mir einen Überblick beschaffen kann.</label>
+                                <input type="file" id="koerperbilder" name="koerperbilder" accept="image/png, image/jpeg" multiple>
+                                <div>
+                                    <p>Hochgeladene Dateien</p>
+                                    <pre class="outputBild">Dateien:</pre>
+                                </div>
+                            </div>
                         </div>
+                        <hr>
                         <div>
                             <label for="groesse">Welche Größe soll das Tattoo haben?</label>
-                            <input type="text" id="groesse" placeholder="in Centimeter">
+                            <input type="text" id="groesse" placeholder="in Centimeter" required>
                         </div>
                         <div>
                             <label for="budget">Wie hoch ist dein Budget?</label>
@@ -107,8 +137,8 @@
                         </div>
                         <div>
                             <label for="zeitraum">In welchem Zeitraum/ an welchen Tagen hast du Zeit?</label>
-                            <input type="date" id="datevon" name="date" placeholder="Von">
-                            <input type="date" id="datebis" name="date" placeholder="Bis">
+                            <input type="date" id="datevon" name="date" placeholder="Von" required>
+                            <input type="date" id="datebis" name="date" placeholder="Bis" required>
                         </div>
                         <div>
                             <label for="sonstiges">Sonstiges</label>
@@ -131,8 +161,12 @@
                             <br>
                         </div>
                         <div>
-                            <input type="checkbox" id="checkbox" name="checkbox" unchecked><br>
+                            <hr>
+                            <label for="checkboxbefor"><b style="color: red; font-size: 28px;">!!!</b></label>
                             <label for="checkbox">Ich habe alles sorgfältig gelesen und ausgefüllt. Mit der Anzahlung und Ausfallgebühr bin ich einverstanden.</label>
+                            <label for="checkboxbefor"><b style="color: red; font-size: 28px;">!!!</b></label>
+                            <input type="checkbox" id="checkbox" name="checkbox" unchecked required>
+                            <hr>
                         </div>
                         <div>
                             <p>Vielen Dank für deine Anfrage! Ich werde dir so schnell es geht antworten.</p><br>

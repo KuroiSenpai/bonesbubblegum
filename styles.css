@@ -32,6 +32,20 @@ form{
     height: auto;
 }
 
+hr {
+    border: none;
+    height: 0.5px;
+    color: #333;
+    background-color: #333;
+    margin: 6px 6px 6px 6px;
+}
+
+.outputRef, .outputKoerper, .outputWunsch, .outputBild{
+    overflow: visible;
+    margin: 1rem 0;
+    height: 200px;
+}
+
 .content-container{
     display: flex;
     justify-content: center;
