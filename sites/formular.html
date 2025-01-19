@@ -4,43 +4,42 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
         <title>Bones & Bubblegum - Anfrage Formular</title>
     </head>
     <body>
         <nav>
-            <div class="logo" style="display: flex; align-items: center;">
-                <span style="color: #ffeba7; font-size: 26px; font-weight: bold; letter-spacing: 1px; margin-left: 20px;"><a href="index.html" style="text-decoration: none;">Bones & Bubblegum</a></span>
+            <div class="nav-left">
+                <span class="logo"><a href="../index.html">Bones & Bubblegum</a></span>
+                <ul class="nav-links">
+                    <li><a href="studio.html">Studio</a></li>
+                    <li><a href="arts.html">Arts</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="artists.html">Artists</a></li>
+                    <li><a href="formular.html">Anfrage</a></li>
+                    <li><a href="login.html">Anmelden</a></li>
+                </ul>
             </div>
             <div class="hamburger">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
-            <ul class="nav-links">
-                <li><a href="/guests/events.html">Events</a></li>
-                <li><a href="/guests/arts.html">Arts</a></li>
-                <li><a href="/guests/artists.html">Artists</a></li>
-                <li><a href="formular.html">Anfrage</a></li>
-                <li><a href="/guests/login.html">Anmelden</a></li>
-            </ul>
         </nav>
         <div class="content-container">
             <div class="content">
                 <form action="/submit-form" method="post">
-                    <div>
+                    <div class="radio-group">
                         <input type="radio" id="artists" name="artists" value="Mol" onclick="showForm('mol-form')">
                         <label for="artists">Mol</label>
-                    </div>
-                    <div>
                         <input type="radio" id="artists" name="artists" value="Kelvin" onclick="showForm('kelvin-form')">
                         <label for="artists">Kelvin</label>
-                    </div>
-                    <div>
                         <input type="radio" id="artists" name="artists" value="Beki" onclick="showForm('beki-form')">
                         <label for="artists">Beki</label>
-                    </div>
-                    <div>
                         <input type="radio" id="artists" name="artists" value="Maileen" onclick="showForm('maileen-form')">
                         <label for="artists">Maileen</label>
                     </div>
@@ -141,6 +140,18 @@
                             <input type="date" id="datebis" name="date" placeholder="Bis" required>
                         </div>
                         <div>
+                            <label for="day">Gib am besten noch die Tage an, an welchen du Zeit hast.</label>
+                            <div class="radio-group">
+                                <input type="radio" id="mo" name="mo" value="mo"><p>MO</p>
+                                <input type="radio" id="di" name="di" value="di"><p>DI</p>
+                                <input type="radio" id="mi" name="mi" value="mi"><p>MI</p>
+                                <input type="radio" id="do" name="do" value="do"><p>DO</p>
+                                <input type="radio" id="fr" name="fr" value="fr"><p>FR</p>
+                                <input type="radio" id="sa" name="sa" value="sa"><p>SA</p>
+                                <input type="radio" id="so" name="so" value="so"><p>SO</p>
+                            </div>
+                        </div>
+                        <div>
                             <label for="sonstiges">Sonstiges</label>
                             <input type="textarea" placeholder="Falls du noch etwas hinzufügen möchtest oder eventuelle weitere Fragen hast.">
                         </div>
@@ -179,11 +190,12 @@
         <div class="social-hub">
             <button class="main-btn">+</button>
             <div class="social-buttons">
-                <button class="social-btn facebook">F</button>
-                <button class="social-btn instagram">I</button>
-                <button class="social-btn x">X</button>
+                <button class="social-btn mol">Mol</button>
+                <button class="social-btn kelvin">Kel</button>
+                <button class="social-btn beki">Beki</button>
+                <button class="social-btn maileen">Mai</button>
             </div>
         </div>
-        <script src="main.js"></script>
+        <script src="../main.js"></script>
     </body>
 </html>
